@@ -1,0 +1,1 @@
+jar cfe LinAlg.jar org.linalg.Main org/linalg/math/*.class org/linalg/expression/*.class org/linalg/expression/parts/*.class org/linalg/expression/parser/exceptions/*.class org/linalg/expression/parser/*.class org/linalg/expression/operations/*.class org/linalg/Main.class

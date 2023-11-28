@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinAlg</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <label for="expression">Expression</label><input id="expression" value="">
+    <button id="calc">Calculate</button>
+    <p>
+    <div id="answer">
+
+    </div>
+</p>
+
+    <script>
+        const inputExpression = document.getElementById("expression");
+        const buttonCalc = document.getElementById("calc");
+        const answerDiv = document.getElementById("answer");
+
+        buttonCalc.addEventListener("click", async e => {
+            const response = await fetch('/', {
+                method: "POST",
+                headers: { "Accept": "application/json", "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "expression": inputExpression.value
+                })
+            });
+
+            const content = await response.json();
+            console.log(content);
+            answerDiv.innerHTML = "\\(" + content.answer + "\\)";
+            MathJax.typeset()
+        });
+
+
+    </script>
+</body>
+</html>

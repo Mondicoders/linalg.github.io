@@ -1,0 +1,3 @@
+[submodule "LinAlg"]
+	path = LinAlg
+	url = git@github.com:Mond1c/LinAlg
