@@ -3,18 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LinAlg</title>
+    <title>Expression Evaluator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #calculator {
+            width: 300px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        input {
+            width: calc(100% - 10px);
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-    <label for="expression">Expression</label><input id="expression" value="">
-    <button id="calc">Calculate</button>
-    <p>
-    <div id="answer">
 
+    <div id="calculator">
+        <h2>Expression Evaluator</h2>
+        <input type="text" id="expression" placeholder="Enter expression">
+        <button id="calc">Evaluate</button>
+        <div id="answer"></div>
     </div>
-</p>
 
     <script>
         const inputExpression = document.getElementById("expression");
@@ -36,7 +82,9 @@
             MathJax.typeset()
         });
 
-
     </script>
+
+    
+
 </body>
 </html>
